@@ -18,14 +18,14 @@ namespace TencentCloud\Gs\V20191118\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * StopGame请求参数结构体
+ * SaveGameArchive请求参数结构体
  *
  * @method string getUserId() 获取游戏用户ID
  * @method void setUserId(string $UserId) 设置游戏用户ID
- * @method string getHostUserId() 获取【多人游戏】游戏主机用户ID
- * @method void setHostUserId(string $HostUserId) 设置【多人游戏】游戏主机用户ID
+ * @method string getGameId() 获取游戏ID
+ * @method void setGameId(string $GameId) 设置游戏ID
  */
-class StopGameRequest extends AbstractModel
+class SaveGameArchiveRequest extends AbstractModel
 {
     /**
      * @var string 游戏用户ID
@@ -33,13 +33,13 @@ class StopGameRequest extends AbstractModel
     public $UserId;
 
     /**
-     * @var string 【多人游戏】游戏主机用户ID
+     * @var string 游戏ID
      */
-    public $HostUserId;
+    public $GameId;
 
     /**
      * @param string $UserId 游戏用户ID
-     * @param string $HostUserId 【多人游戏】游戏主机用户ID
+     * @param string $GameId 游戏ID
      */
     function __construct()
     {
@@ -58,8 +58,8 @@ class StopGameRequest extends AbstractModel
             $this->UserId = $param["UserId"];
         }
 
-        if (array_key_exists("HostUserId",$param) and $param["HostUserId"] !== null) {
-            $this->HostUserId = $param["HostUserId"];
+        if (array_key_exists("GameId",$param) and $param["GameId"] !== null) {
+            $this->GameId = $param["GameId"];
         }
     }
 }

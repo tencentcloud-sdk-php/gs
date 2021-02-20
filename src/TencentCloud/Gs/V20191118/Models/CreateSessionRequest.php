@@ -34,8 +34,8 @@ use TencentCloud\Common\AbstractModel;
  * @method void setResolution(string $Resolution) 设置分辨率,，可设置为1080p或720p
  * @method string getImageUrl() 获取背景图url，格式为png或jpeg，宽高1920*1080
  * @method void setImageUrl(string $ImageUrl) 设置背景图url，格式为png或jpeg，宽高1920*1080
- * @method integer getSetNo() 获取【将废弃】资源池编号，比如1表示正式，2表示测试
- * @method void setSetNo(integer $SetNo) 设置【将废弃】资源池编号，比如1表示正式，2表示测试
+ * @method integer getSetNo() 获取【废弃】资源池编号
+ * @method void setSetNo(integer $SetNo) 设置【废弃】资源池编号
  * @method integer getBitrate() 获取单位Mbps，固定码率，后端不动态调整(MaxBitrate和MinBitrate将无效)
  * @method void setBitrate(integer $Bitrate) 设置单位Mbps，固定码率，后端不动态调整(MaxBitrate和MinBitrate将无效)
  * @method integer getMaxBitrate() 获取单位Mbps，动态调整最大码率
@@ -52,6 +52,8 @@ use TencentCloud\Common\AbstractModel;
  * @method void setHostUserId(string $HostUserId) 设置【多人云游】游戏主机用户ID
  * @method string getRole() 获取【多人云游】角色；Player表示玩家；Viewer表示观察者
  * @method void setRole(string $Role) 设置【多人云游】角色；Player表示玩家；Viewer表示观察者
+ * @method string getGameContext() 获取游戏相关参数
+ * @method void setGameContext(string $GameContext) 设置游戏相关参数
  */
 class CreateSessionRequest extends AbstractModel
 {
@@ -91,7 +93,7 @@ class CreateSessionRequest extends AbstractModel
     public $ImageUrl;
 
     /**
-     * @var integer 【将废弃】资源池编号，比如1表示正式，2表示测试
+     * @var integer 【废弃】资源池编号
      */
     public $SetNo;
 
@@ -136,6 +138,11 @@ class CreateSessionRequest extends AbstractModel
     public $Role;
 
     /**
+     * @var string 游戏相关参数
+     */
+    public $GameContext;
+
+    /**
      * @param string $ClientSession 客户端session信息，从JSSDK请求中获得
      * @param string $UserId 游戏用户ID
      * @param string $GameId 游戏ID
@@ -143,7 +150,7 @@ class CreateSessionRequest extends AbstractModel
      * @param string $GameParas 游戏参数
      * @param string $Resolution 分辨率,，可设置为1080p或720p
      * @param string $ImageUrl 背景图url，格式为png或jpeg，宽高1920*1080
-     * @param integer $SetNo 【将废弃】资源池编号，比如1表示正式，2表示测试
+     * @param integer $SetNo 【废弃】资源池编号
      * @param integer $Bitrate 单位Mbps，固定码率，后端不动态调整(MaxBitrate和MinBitrate将无效)
      * @param integer $MaxBitrate 单位Mbps，动态调整最大码率
      * @param integer $MinBitrate 单位Mbps，动态调整最小码率
@@ -152,6 +159,7 @@ class CreateSessionRequest extends AbstractModel
      * @param integer $Optimization 优化项，便于客户灰度开启新的优化项，默认为0
      * @param string $HostUserId 【多人云游】游戏主机用户ID
      * @param string $Role 【多人云游】角色；Player表示玩家；Viewer表示观察者
+     * @param string $GameContext 游戏相关参数
      */
     function __construct()
     {
@@ -228,6 +236,10 @@ class CreateSessionRequest extends AbstractModel
 
         if (array_key_exists("Role",$param) and $param["Role"] !== null) {
             $this->Role = $param["Role"];
+        }
+
+        if (array_key_exists("GameContext",$param) and $param["GameContext"] !== null) {
+            $this->GameContext = $param["GameContext"];
         }
     }
 }

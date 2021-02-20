@@ -18,14 +18,18 @@ namespace TencentCloud\Gs\V20191118\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * StopGame请求参数结构体
+ * SwitchGameArchive请求参数结构体
  *
  * @method string getUserId() 获取游戏用户ID
  * @method void setUserId(string $UserId) 设置游戏用户ID
- * @method string getHostUserId() 获取【多人游戏】游戏主机用户ID
- * @method void setHostUserId(string $HostUserId) 设置【多人游戏】游戏主机用户ID
+ * @method string getGameId() 获取游戏ID
+ * @method void setGameId(string $GameId) 设置游戏ID
+ * @method string getGameArchiveUrl() 获取游戏存档Url
+ * @method void setGameArchiveUrl(string $GameArchiveUrl) 设置游戏存档Url
+ * @method string getGameContext() 获取游戏相关参数
+ * @method void setGameContext(string $GameContext) 设置游戏相关参数
  */
-class StopGameRequest extends AbstractModel
+class SwitchGameArchiveRequest extends AbstractModel
 {
     /**
      * @var string 游戏用户ID
@@ -33,13 +37,25 @@ class StopGameRequest extends AbstractModel
     public $UserId;
 
     /**
-     * @var string 【多人游戏】游戏主机用户ID
+     * @var string 游戏ID
      */
-    public $HostUserId;
+    public $GameId;
+
+    /**
+     * @var string 游戏存档Url
+     */
+    public $GameArchiveUrl;
+
+    /**
+     * @var string 游戏相关参数
+     */
+    public $GameContext;
 
     /**
      * @param string $UserId 游戏用户ID
-     * @param string $HostUserId 【多人游戏】游戏主机用户ID
+     * @param string $GameId 游戏ID
+     * @param string $GameArchiveUrl 游戏存档Url
+     * @param string $GameContext 游戏相关参数
      */
     function __construct()
     {
@@ -58,8 +74,16 @@ class StopGameRequest extends AbstractModel
             $this->UserId = $param["UserId"];
         }
 
-        if (array_key_exists("HostUserId",$param) and $param["HostUserId"] !== null) {
-            $this->HostUserId = $param["HostUserId"];
+        if (array_key_exists("GameId",$param) and $param["GameId"] !== null) {
+            $this->GameId = $param["GameId"];
+        }
+
+        if (array_key_exists("GameArchiveUrl",$param) and $param["GameArchiveUrl"] !== null) {
+            $this->GameArchiveUrl = $param["GameArchiveUrl"];
+        }
+
+        if (array_key_exists("GameContext",$param) and $param["GameContext"] !== null) {
+            $this->GameContext = $param["GameContext"];
         }
     }
 }

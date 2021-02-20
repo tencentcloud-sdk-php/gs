@@ -18,33 +18,26 @@ namespace TencentCloud\Gs\V20191118\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * CreateSession返回参数结构体
+ * DescribeInstancesCount返回参数结构体
  *
- * @method string getServerSession() 获取服务端session信息，返回给JSSDK
- * @method void setServerSession(string $ServerSession) 设置服务端session信息，返回给JSSDK
- * @method string getRoleNumber() 获取【多人游戏】角色编号；比如1、2、3、4
- * @method void setRoleNumber(string $RoleNumber) 设置【多人游戏】角色编号；比如1、2、3、4
- * @method string getRole() 获取【多人云游】角色；Player表示玩家；Viewer表示观察者
- * @method void setRole(string $Role) 设置【多人云游】角色；Player表示玩家；Viewer表示观察者
+ * @method integer getTotal() 获取客户的实例总数
+ * @method void setTotal(integer $Total) 设置客户的实例总数
+ * @method integer getRunning() 获取客户的实例运行数
+ * @method void setRunning(integer $Running) 设置客户的实例运行数
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class CreateSessionResponse extends AbstractModel
+class DescribeInstancesCountResponse extends AbstractModel
 {
     /**
-     * @var string 服务端session信息，返回给JSSDK
+     * @var integer 客户的实例总数
      */
-    public $ServerSession;
+    public $Total;
 
     /**
-     * @var string 【多人游戏】角色编号；比如1、2、3、4
+     * @var integer 客户的实例运行数
      */
-    public $RoleNumber;
-
-    /**
-     * @var string 【多人云游】角色；Player表示玩家；Viewer表示观察者
-     */
-    public $Role;
+    public $Running;
 
     /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
@@ -52,9 +45,8 @@ class CreateSessionResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param string $ServerSession 服务端session信息，返回给JSSDK
-     * @param string $RoleNumber 【多人游戏】角色编号；比如1、2、3、4
-     * @param string $Role 【多人云游】角色；Player表示玩家；Viewer表示观察者
+     * @param integer $Total 客户的实例总数
+     * @param integer $Running 客户的实例运行数
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -70,16 +62,12 @@ class CreateSessionResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("ServerSession",$param) and $param["ServerSession"] !== null) {
-            $this->ServerSession = $param["ServerSession"];
+        if (array_key_exists("Total",$param) and $param["Total"] !== null) {
+            $this->Total = $param["Total"];
         }
 
-        if (array_key_exists("RoleNumber",$param) and $param["RoleNumber"] !== null) {
-            $this->RoleNumber = $param["RoleNumber"];
-        }
-
-        if (array_key_exists("Role",$param) and $param["Role"] !== null) {
-            $this->Role = $param["Role"];
+        if (array_key_exists("Running",$param) and $param["Running"] !== null) {
+            $this->Running = $param["Running"];
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {

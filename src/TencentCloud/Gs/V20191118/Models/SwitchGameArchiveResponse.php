@@ -18,28 +18,20 @@ namespace TencentCloud\Gs\V20191118\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * StopGame请求参数结构体
+ * SwitchGameArchive返回参数结构体
  *
- * @method string getUserId() 获取游戏用户ID
- * @method void setUserId(string $UserId) 设置游戏用户ID
- * @method string getHostUserId() 获取【多人游戏】游戏主机用户ID
- * @method void setHostUserId(string $HostUserId) 设置【多人游戏】游戏主机用户ID
+ * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+ * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class StopGameRequest extends AbstractModel
+class SwitchGameArchiveResponse extends AbstractModel
 {
     /**
-     * @var string 游戏用户ID
+     * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
-    public $UserId;
+    public $RequestId;
 
     /**
-     * @var string 【多人游戏】游戏主机用户ID
-     */
-    public $HostUserId;
-
-    /**
-     * @param string $UserId 游戏用户ID
-     * @param string $HostUserId 【多人游戏】游戏主机用户ID
+     * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
     {
@@ -54,12 +46,8 @@ class StopGameRequest extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("UserId",$param) and $param["UserId"] !== null) {
-            $this->UserId = $param["UserId"];
-        }
-
-        if (array_key_exists("HostUserId",$param) and $param["HostUserId"] !== null) {
-            $this->HostUserId = $param["HostUserId"];
+        if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
+            $this->RequestId = $param["RequestId"];
         }
     }
 }
