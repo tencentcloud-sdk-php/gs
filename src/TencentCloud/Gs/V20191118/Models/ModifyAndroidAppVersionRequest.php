@@ -18,39 +18,33 @@ namespace TencentCloud\Gs\V20191118\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 安卓应用版本信息
+ * ModifyAndroidAppVersion请求参数结构体
  *
- * @method string getAndroidAppVersion() 获取安卓应用版本
- * @method void setAndroidAppVersion(string $AndroidAppVersion) 设置安卓应用版本
- * @method string getState() 获取安卓应用版本创建状态（NORMAL：无、UPLOADING：上传中、
-CREATING： 创建中、
-CREATE_FAIL：创建失败、CREATE_SUCCESS：创建成功）
- * @method void setState(string $State) 设置安卓应用版本创建状态（NORMAL：无、UPLOADING：上传中、
-CREATING： 创建中、
-CREATE_FAIL：创建失败、CREATE_SUCCESS：创建成功）
- * @method string getCreateTime() 获取安卓应用版本创建时间
- * @method void setCreateTime(string $CreateTime) 设置安卓应用版本创建时间
+ * @method string getAndroidAppId() 获取安卓应用 Id
+ * @method void setAndroidAppId(string $AndroidAppId) 设置安卓应用 Id
+ * @method string getAndroidAppVersion() 获取安卓应用版本 Id
+ * @method void setAndroidAppVersion(string $AndroidAppVersion) 设置安卓应用版本 Id
+ * @method string getAndroidAppVersionName() 获取安卓应用版本名称
+ * @method void setAndroidAppVersionName(string $AndroidAppVersionName) 设置安卓应用版本名称
  * @method string getCommand() 获取shell 命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
  * @method void setCommand(string $Command) 设置shell 命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
  */
-class AndroidAppVersionInfo extends AbstractModel
+class ModifyAndroidAppVersionRequest extends AbstractModel
 {
     /**
-     * @var string 安卓应用版本
+     * @var string 安卓应用 Id
+     */
+    public $AndroidAppId;
+
+    /**
+     * @var string 安卓应用版本 Id
      */
     public $AndroidAppVersion;
 
     /**
-     * @var string 安卓应用版本创建状态（NORMAL：无、UPLOADING：上传中、
-CREATING： 创建中、
-CREATE_FAIL：创建失败、CREATE_SUCCESS：创建成功）
+     * @var string 安卓应用版本名称
      */
-    public $State;
-
-    /**
-     * @var string 安卓应用版本创建时间
-     */
-    public $CreateTime;
+    public $AndroidAppVersionName;
 
     /**
      * @var string shell 命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
@@ -58,11 +52,9 @@ CREATE_FAIL：创建失败、CREATE_SUCCESS：创建成功）
     public $Command;
 
     /**
-     * @param string $AndroidAppVersion 安卓应用版本
-     * @param string $State 安卓应用版本创建状态（NORMAL：无、UPLOADING：上传中、
-CREATING： 创建中、
-CREATE_FAIL：创建失败、CREATE_SUCCESS：创建成功）
-     * @param string $CreateTime 安卓应用版本创建时间
+     * @param string $AndroidAppId 安卓应用 Id
+     * @param string $AndroidAppVersion 安卓应用版本 Id
+     * @param string $AndroidAppVersionName 安卓应用版本名称
      * @param string $Command shell 命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
      */
     function __construct()
@@ -78,16 +70,16 @@ CREATE_FAIL：创建失败、CREATE_SUCCESS：创建成功）
         if ($param === null) {
             return;
         }
+        if (array_key_exists("AndroidAppId",$param) and $param["AndroidAppId"] !== null) {
+            $this->AndroidAppId = $param["AndroidAppId"];
+        }
+
         if (array_key_exists("AndroidAppVersion",$param) and $param["AndroidAppVersion"] !== null) {
             $this->AndroidAppVersion = $param["AndroidAppVersion"];
         }
 
-        if (array_key_exists("State",$param) and $param["State"] !== null) {
-            $this->State = $param["State"];
-        }
-
-        if (array_key_exists("CreateTime",$param) and $param["CreateTime"] !== null) {
-            $this->CreateTime = $param["CreateTime"];
+        if (array_key_exists("AndroidAppVersionName",$param) and $param["AndroidAppVersionName"] !== null) {
+            $this->AndroidAppVersionName = $param["AndroidAppVersionName"];
         }
 
         if (array_key_exists("Command",$param) and $param["Command"] !== null) {

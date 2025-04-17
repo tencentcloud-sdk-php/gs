@@ -18,10 +18,10 @@ namespace TencentCloud\Gs\V20191118\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * ModifyAndroidInstanceResolution请求参数结构体
+ * ModifyAndroidInstancesResolution请求参数结构体
  *
- * @method string getAndroidInstanceId() 获取安卓实例 ID
- * @method void setAndroidInstanceId(string $AndroidInstanceId) 设置安卓实例 ID
+ * @method array getAndroidInstanceIds() 获取安卓实例 ID 列表
+ * @method void setAndroidInstanceIds(array $AndroidInstanceIds) 设置安卓实例 ID 列表
  * @method integer getWidth() 获取分辨率宽度。建议按照以下数值设置，避免出现性能不足问题：
 实例类型为单开（A1）：建议设置为 1080
 实例类型为双开（A2） 及以上：建议设置为 720
@@ -34,14 +34,18 @@ use TencentCloud\Common\AbstractModel;
  * @method void setHeight(integer $Height) 设置分辨率高度。建议按照以下数值设置，避免出现性能不足问题：
 实例类型为单开（A1）：建议设置为 1920
 实例类型为双开（A2） 及以上：建议设置为 1280
- * @method integer getDPI() 获取每英寸像素点。如果不填，系统将会计算一个合理的数值。修改 DPI 可能会导致 App 异常退出，请谨慎使用！
+ * @method integer getDPI() 获取每英寸像素点。
 分辨率为 720x1280：建议配置为 320
 分辨率为  1080x1920：建议配置为 480
- * @method void setDPI(integer $DPI) 设置每英寸像素点。如果不填，系统将会计算一个合理的数值。修改 DPI 可能会导致 App 异常退出，请谨慎使用！
+ * @method void setDPI(integer $DPI) 设置每英寸像素点。
 分辨率为 720x1280：建议配置为 320
 分辨率为  1080x1920：建议配置为 480
- * @method integer getFPS() 获取帧率。ResolutionType 为 PHYSICAL 时才会修改帧率。另外建议按照以下数值设置，避免出现性能不足问题： 实例类型为单开（A1）：建议设置为 60 实例类型为双开（A2） 及以上：建议设置为 30
- * @method void setFPS(integer $FPS) 设置帧率。ResolutionType 为 PHYSICAL 时才会修改帧率。另外建议按照以下数值设置，避免出现性能不足问题： 实例类型为单开（A1）：建议设置为 60 实例类型为双开（A2） 及以上：建议设置为 30
+ * @method integer getFPS() 获取帧率。ResolutionType 为 PHYSICAL 时才会修改帧率。另外建议按照以下数值设置，避免出现性能不足问题：
+实例类型为单开（A1）：建议设置为 60
+实例类型为双开（A2） 及以上：建议设置为 30
+ * @method void setFPS(integer $FPS) 设置帧率。ResolutionType 为 PHYSICAL 时才会修改帧率。另外建议按照以下数值设置，避免出现性能不足问题：
+实例类型为单开（A1）：建议设置为 60
+实例类型为双开（A2） 及以上：建议设置为 30
  * @method string getResolutionType() 获取修改分辨率类型。修改物理分辨率，需要重启才能生效。
 OVERRIDE：默认值，修改覆盖（显示）分辨率
 PHYSICAL：修改物理分辨率
@@ -49,12 +53,12 @@ PHYSICAL：修改物理分辨率
 OVERRIDE：默认值，修改覆盖（显示）分辨率
 PHYSICAL：修改物理分辨率
  */
-class ModifyAndroidInstanceResolutionRequest extends AbstractModel
+class ModifyAndroidInstancesResolutionRequest extends AbstractModel
 {
     /**
-     * @var string 安卓实例 ID
+     * @var array 安卓实例 ID 列表
      */
-    public $AndroidInstanceId;
+    public $AndroidInstanceIds;
 
     /**
      * @var integer 分辨率宽度。建议按照以下数值设置，避免出现性能不足问题：
@@ -71,14 +75,16 @@ class ModifyAndroidInstanceResolutionRequest extends AbstractModel
     public $Height;
 
     /**
-     * @var integer 每英寸像素点。如果不填，系统将会计算一个合理的数值。修改 DPI 可能会导致 App 异常退出，请谨慎使用！
+     * @var integer 每英寸像素点。
 分辨率为 720x1280：建议配置为 320
 分辨率为  1080x1920：建议配置为 480
      */
     public $DPI;
 
     /**
-     * @var integer 帧率。ResolutionType 为 PHYSICAL 时才会修改帧率。另外建议按照以下数值设置，避免出现性能不足问题： 实例类型为单开（A1）：建议设置为 60 实例类型为双开（A2） 及以上：建议设置为 30
+     * @var integer 帧率。ResolutionType 为 PHYSICAL 时才会修改帧率。另外建议按照以下数值设置，避免出现性能不足问题：
+实例类型为单开（A1）：建议设置为 60
+实例类型为双开（A2） 及以上：建议设置为 30
      */
     public $FPS;
 
@@ -90,17 +96,19 @@ PHYSICAL：修改物理分辨率
     public $ResolutionType;
 
     /**
-     * @param string $AndroidInstanceId 安卓实例 ID
+     * @param array $AndroidInstanceIds 安卓实例 ID 列表
      * @param integer $Width 分辨率宽度。建议按照以下数值设置，避免出现性能不足问题：
 实例类型为单开（A1）：建议设置为 1080
 实例类型为双开（A2） 及以上：建议设置为 720
      * @param integer $Height 分辨率高度。建议按照以下数值设置，避免出现性能不足问题：
 实例类型为单开（A1）：建议设置为 1920
 实例类型为双开（A2） 及以上：建议设置为 1280
-     * @param integer $DPI 每英寸像素点。如果不填，系统将会计算一个合理的数值。修改 DPI 可能会导致 App 异常退出，请谨慎使用！
+     * @param integer $DPI 每英寸像素点。
 分辨率为 720x1280：建议配置为 320
 分辨率为  1080x1920：建议配置为 480
-     * @param integer $FPS 帧率。ResolutionType 为 PHYSICAL 时才会修改帧率。另外建议按照以下数值设置，避免出现性能不足问题： 实例类型为单开（A1）：建议设置为 60 实例类型为双开（A2） 及以上：建议设置为 30
+     * @param integer $FPS 帧率。ResolutionType 为 PHYSICAL 时才会修改帧率。另外建议按照以下数值设置，避免出现性能不足问题：
+实例类型为单开（A1）：建议设置为 60
+实例类型为双开（A2） 及以上：建议设置为 30
      * @param string $ResolutionType 修改分辨率类型。修改物理分辨率，需要重启才能生效。
 OVERRIDE：默认值，修改覆盖（显示）分辨率
 PHYSICAL：修改物理分辨率
@@ -118,8 +126,8 @@ PHYSICAL：修改物理分辨率
         if ($param === null) {
             return;
         }
-        if (array_key_exists("AndroidInstanceId",$param) and $param["AndroidInstanceId"] !== null) {
-            $this->AndroidInstanceId = $param["AndroidInstanceId"];
+        if (array_key_exists("AndroidInstanceIds",$param) and $param["AndroidInstanceIds"] !== null) {
+            $this->AndroidInstanceIds = $param["AndroidInstanceIds"];
         }
 
         if (array_key_exists("Width",$param) and $param["Width"] !== null) {
